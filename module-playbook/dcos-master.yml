@@ -1,0 +1,9 @@
+--- 
+- hosts: mesos-master
+  become: yes
+  become_user: root
+  roles:
+    - ansible-dcos-bootstrap-master
+  tags:
+    - bootstrap
+    - ansible-dcos-bootstrap-master

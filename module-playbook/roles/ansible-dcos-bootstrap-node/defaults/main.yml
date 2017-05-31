@@ -1,0 +1,22 @@
+---
+# defaults file for ansible-dcos-bootstrap-node
+
+dcos_bootstrap_url: "{{ bootstrap_internal_url }}"
+bootstrap_internal_url: http://{{ hostvars['boot']['ansible_enp0s8']['ipv4']['address'] }}:{{ dcos_bootstrap_port }}
+bootstrap_external_url: http://192.168.65.50:{{ dcos_bootstrap_port }}
+dcos_bootstrap_port: 8080
+dcos_iface: enp0s8
+dcos_bootstrap_dir : '{{ansible_env.HOME}}/dcos-bootstrap'
+dcos_bootstrap_generate_config_url: https://downloads.dcos.io/dcos/stable/commit/0ce03387884523f02624d3fb56c7fbe2e06e181b
+dcos_bootstrap_generate_config: dcos_generate_config.sh
+dcos_cluster_name: 'dcos.ajway.kr'
+dcos_bootstrap_group : 'dcos-bootstrap'
+dcos_bootstrap_master_group : 'mesos-master'
+dcos_bootstrap_agent_group : 'mesos-agent'
+dcos_bootstrap_public_agent_group : 'mesos-agent-public'
+dcos_exhibitor_storage_backend: static
+dcos_bootstrap_iface: enp0s8
+dcos_resolvers_0: '10.0.2.3'
+dcos_resolvers_1: '8.8.8.8'
+
+dcos_master_url : "http://{{ hostvars[groups[mesos-master][0]]['ansible_' + hostvars[groups[mesos-master][0]]['dcos_iface']]['ipv4']['address'] }}:{{dcos_bootstrap_port}}"

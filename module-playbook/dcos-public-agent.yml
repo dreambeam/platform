@@ -1,0 +1,9 @@
+--- 
+- hosts: mesos-agent-public
+  become: yes
+  become_user: root
+  roles:
+    - ansible-dcos-bootstrap-agent-public
+  tags:
+    - bootstrap
+    - ansible-dcos-bootstrap-agent-public

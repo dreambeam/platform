@@ -1,0 +1,51 @@
+bootstrap_url: {{ dcos_bootstrap_url }}
+cluster_name: {{ dcos_cluster_name }}
+exhibitor_storage_backend: {{ dcos_exhibitor_storage_backend }}
+ip_detect_filename: /genconf/ip-detect
+master_discovery: {{dcos_master_discovery}}
+master_list:
+{% for host in groups['mesos-master'] %}
+- {{ hostvars[host]['ansible_enp0s8']['ipv4']['address'] }}
+{% endfor %}
+agent_list:
+{% for host in groups['mesos-agent'] %}
+- {{ hostvars[host]['ansible_enp0s8']['ipv4']['address'] }}
+{% endfor %}
+public_agent_list:
+{% for host in groups['mesos-agent-public'] %}
+- {{ hostvars[host]['ansible_enp0s8']['ipv4']['address'] }}
+{% endfor %}
+
+resolvers:
+- {{ dcos_resolvers_0 }}
+- {{ dcos_resolvers_1 }}
+use_proxy: 'false'
+check_time: 'true'
+oauth_enabled: 'false'
+telemetry_enabled: 'false'
+dcos_overlay_enable: 'true'
+dcos_overlay_mtu: 9000
+dcos_overlay_network_default_name: dev
+dcos_overlay_network:
+  vtep_subnet: 44.128.0.0/20
+  vtep_mac_oui: 70:B3:D5:00:00:00
+  overlays:
+    - name: dev
+      subnet: 9.0.0.0/8
+      prefix: 22
+    - name: prod
+      subnet: 10.0.0.0/8
+      prefix: 22   
+ssh_key_path: /genconf/ssh-key
+ssh_port: '22'
+ssh_user: vagrant
+enable_docker_gc: 'true'
+mesos_container_log_sink: journald+logrotate
+#cluster_docker_registry_url: http://nas.ajway.kr:6000
+#cluster_docker_credentials_dcos_owned: 'false'
+#cluster_docker_credentials_enabled: 'true'
+#cluster_docker_credentials:
+#  auths:
+#    'http://nas.ajway.kr:6000/v1/':
+#      auth: ZGNvczpkY29zMTJ+IQ==
+#      email: ta@ajway.kr
