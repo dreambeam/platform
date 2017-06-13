@@ -1,5 +1,7 @@
 ---
 # defaults file for ansible-dcos-common
+
+dcos_iface: em1
 dcos_bootstrap_group : 'dcos-bootstrap'
 dcos_bootstrap_master_group : 'mesos-master'
 dcos_bootstrap_agent_group : 'mesos-agent'
