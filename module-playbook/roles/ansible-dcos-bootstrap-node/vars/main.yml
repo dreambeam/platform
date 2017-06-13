@@ -1,2 +1,4 @@
 ---
 # variables for ansible-dcos-bootstrap-node
+
+dcos_master_url : "http://{{ hostvars[groups[mesos-master][0]]['ansible_' + hostvars[groups[mesos-master][0]]['dcos_iface']]['ipv4']['address'] }}:{{dcos_bootstrap_port}}"
