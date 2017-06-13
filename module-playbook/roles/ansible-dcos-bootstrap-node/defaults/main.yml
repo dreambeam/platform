@@ -18,5 +18,3 @@ dcos_exhibitor_storage_backend: static
 dcos_bootstrap_iface: enp0s8
 dcos_resolvers_0: '10.0.2.3'
 dcos_resolvers_1: '8.8.8.8'
-
-dcos_master_url : "http://{{ hostvars[groups[mesos-master][0]]['ansible_' + hostvars[groups[mesos-master][0]]['dcos_iface']]['ipv4']['address'] }}:{{dcos_bootstrap_port}}"
