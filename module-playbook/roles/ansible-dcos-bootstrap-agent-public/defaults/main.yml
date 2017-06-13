@@ -2,8 +2,8 @@
 # defaults file for ansible-dcos-bootstrap-agent
 
 dcos_bootstrap_url: "{{ bootstrap_internal_url }}"
-bootstrap_internal_url: http://{{ hostvars['bootstrap.dcos.ajway.kr']['ansible_em1']['ipv4']['address'] }}:{{ dcos_bootstrap_port }}
-bootstrap_external_url: http://192.10.250.232:{{ dcos_bootstrap_port }}
+bootstrap_internal_url: http://{{ hostvars['boot']['ansible_enp0s8']['ipv4']['address'] }}:{{ dcos_bootstrap_port }}
+bootstrap_external_url: http://192.168.65.50:{{ dcos_bootstrap_port }}
 dcos_bootstrap_port: 8080
 dcos_iface: enp0s8
 # host variables
