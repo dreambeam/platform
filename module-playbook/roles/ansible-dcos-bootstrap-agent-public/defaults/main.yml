@@ -5,5 +5,7 @@ dcos_bootstrap_url: "{{ bootstrap_internal_url }}"
 bootstrap_internal_url: http://{{ hostvars['bootstrap.dcos.ajway.kr']['ansible_em1']['ipv4']['address'] }}:{{ dcos_bootstrap_port }}
 bootstrap_external_url: http://192.10.250.232:{{ dcos_bootstrap_port }}
 dcos_bootstrap_port: 8080
+dcos_iface: enp0s8
 # host variables
+dcos_bootstrap_group : 'dcos-bootstrap'
 dcos_bootstrap_public_agent_group : 'mesos-agent-public'
