@@ -8,7 +8,7 @@ dcos_bootstrap_group : 'dcos-bootstrap'
 dcos_bootstrap_master_group : 'mesos-master'
 dcos_bootstrap_agent_group : 'mesos-agent'
 dcos_bootstrap_public_agent_group : 'mesos-agent-public'
-#dcos_bootstrap_iface : enp0s8
+
 dcos_iface: enp0s8
 dcos_bootstrap_dir : '{{ansible_env.HOME}}/dcos-bootstrap'
 dcos_bootstrap_generate_config_url: https://downloads.dcos.io/dcos/stable/commit/0ce03387884523f02624d3fb56c7fbe2e06e181b/dcos_generate_config.sh?_ga=2.173898787.1456117752.1495593566-1122951392.1474262286
@@ -16,6 +16,6 @@ dcos_bootstrap_generate_config: dcos_generate_config.sh
 dcos_cluster_name: 'dcos.ajway.kr'
 dcos_exhibitor_storage_backend: static
 dcos_master_discovery: static
-dcos_bootstrap_iface: 
+
 dcos_resolvers_0: '10.0.2.3'
 dcos_resolvers_1: '8.8.8.8'
