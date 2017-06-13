@@ -5,6 +5,7 @@ dcos_bootstrap_url: "{{ bootstrap_internal_url }}"
 bootstrap_internal_url: http://{{ hostvars['boot']['ansible_enp0s8']['ipv4']['address'] }}:{{ dcos_bootstrap_port }}
 bootstrap_external_url: http://192.168.65.50:{{ dcos_bootstrap_port }}
 dcos_bootstrap_port: 8080
+dcos_iface: enp0s8
 #dcos_bootstrap_url : "http://{{ hostvars[groups[dcos_bootstrap_group][0]]['ansible_' + hostvars[groups[dcos_bootstrap_group][0]]['dcos_bootstrap_iface']]['ipv4']['address'] }}:{{dcos_bootstrap_port}}"
 dcos_bootstrap_group : 'dcos-bootstrap'
 dcos_bootstrap_master_group : 'mesos-master'
