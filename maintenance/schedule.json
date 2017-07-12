@@ -1,0 +1,16 @@
+{
+  "windows" : [
+    {
+      "machine_ids" : [
+        { "hostname" : "private1.dcos.ajway.kr", "ip" : "192.10.250.234" },
+        { "hostname" : "private2.dcos.ajway.kr", "ip" : "192.10.250.235" },
+        { "hostname" : "private3.dcos.ajway.kr", "ip" : "192.10.250.233" },
+        { "hostname" : "public1.dcos.ajway.kr", "ip" : "192.10.250.233" }
+      ],
+      "unavailability" : {
+        "start" : { "nanoseconds" : 1498950400000000000 },
+        "duration" : { "nanoseconds" : 3600000000000 }
+      }
+    }
+  ]
+}
