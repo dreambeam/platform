@@ -1,0 +1,8 @@
+---
+-hosts: mesos-agent, mesos-agent-public
+  tasks:
+    - name: Set iptables forward chain
+      iptables: chain=FORWARD policy=ACCEPT
+      
+    - name: Persist iptables rules
+      command: service iptables save

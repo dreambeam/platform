@@ -9,3 +9,6 @@ dcos_iface: enp0s8
 #dcos_bootstrap_url : "http://{{ hostvars[groups[dcos_bootstrap_group][0]]['ansible_' + hostvars[groups[dcos_bootstrap_group][0]]['dcos_bootstrap_iface']]['ipv4']['address'] }}:{{dcos_bootstrap_port}}"
 dcos_bootstrap_group : 'dcos-bootstrap'
 dcos_bootstrap_agent_group : 'mesos-agent'
+dcos_bootstrap_master_group : 'mesos-master'
+dcos_bootstrap_agent_group : 'mesos-agent'
+dcos_bootstrap_public_agent_group : 'mesos-agent-public'

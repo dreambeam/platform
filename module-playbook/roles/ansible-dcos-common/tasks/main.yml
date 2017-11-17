@@ -31,6 +31,9 @@
 - name: Install NTP
   yum: name=ntp state=latest
 
+- name: Configure NTP clients
+  template: src=ntp.conf.j2 dest=/etc/ntp.conf
+  
 - name: Enable and start NTP daemon
   systemd: name=ntpd enabled=yes state=started
 
@@ -50,9 +53,9 @@
   template: src=override.conf.j2 dest=/etc/systemd/system/docker.service.d/override.conf
 
 - name: Install the Docker engine, daemon
-  yum: name=docker-engine-1.13.1 state=latest
+  yum: name=docker-engine-1.13.1 state=present
 
-- name: Install the Docker engine service
+- name: Uninstall the Docker engine service
   yum: name=docker-engine-selinux state=absent
 
 - name: Configure Docker registry

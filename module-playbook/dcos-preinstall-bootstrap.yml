@@ -6,3 +6,10 @@
   tags:
     - common
     - ansible-dcos-common
+
+- hosts: dcos-bootstrap
+  roles:
+    - ansible-dcos-bootstrap-node
+  tags:
+    - bootstrap
+    - ansible-dcos-bootstrap-node

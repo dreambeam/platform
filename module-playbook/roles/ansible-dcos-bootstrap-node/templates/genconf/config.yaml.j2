@@ -24,7 +24,7 @@ check_time: 'true'
 oauth_enabled: 'false'
 telemetry_enabled: 'false'
 dcos_overlay_enable: 'true'
-dcos_overlay_mtu: 9000
+dcos_overlay_mtu: 8920
 dcos_overlay_network_default_name: dev
 dcos_overlay_network:
   vtep_subnet: 44.128.0.0/20
@@ -41,11 +41,18 @@ ssh_port: '22'
 ssh_user: vagrant
 enable_docker_gc: 'true'
 mesos_container_log_sink: journald+logrotate
-#cluster_docker_registry_url: http://nas.ajway.kr:6000
-#cluster_docker_credentials_dcos_owned: 'false'
-#cluster_docker_credentials_enabled: 'true'
-#cluster_docker_credentials:
-#  auths:
-#    'http://nas.ajway.kr:6000/v1/':
-#      auth: ZGNvczpkY29zMTJ+IQ==
-#      email: ta@ajway.kr
+rexray_config:
+  rexray:
+    loglevel: info
+  libstorage:
+    logging:
+      level: info
+    service: rbd
+    integration:
+      volume:
+        operations:
+          create:
+            default:
+              size: 16
+  rbd:
+    defaultPool: rbd2
