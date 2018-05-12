@@ -55,8 +55,8 @@
 - name: Install the Docker engine, daemon
   yum: name=docker-engine-1.13.1 state=present
 
-- name: Uninstall the Docker engine service
-  yum: name=docker-engine-selinux state=absent
+#- name: Uninstall the Docker engine service
+#  yum: name=docker-engine-selinux state=absent
 
 - name: Configure Docker registry
   template: src=daemon.json.j2 dest=/etc/docker/daemon.json
